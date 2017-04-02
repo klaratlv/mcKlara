@@ -15,16 +15,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/send', (req, res) => {
-  const station = req.query.station
-  const mission = req.query.mission
-  const orientation = req.query.orientation
-  const param1 = req.query.param1
-  const param2 = req.query.param2
-  const param3 = req.query.param3
+  const params = req.query
   
   axios.get(`http://blynk-cloud.com/${blynkToken}/update/V31`, {
     params: {
-      value: `${station},${orientation},${mission},${param1},${param2},${param3}`
+      value: `${params.station},${params.orientation},${params.mission},${params.param1},${params.param2},${params.param3}`
     }
   })
   .then(function (response) {
