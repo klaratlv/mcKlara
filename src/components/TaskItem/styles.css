@@ -1,0 +1,23 @@
+.TaskItem {
+  background-color: white;
+  border: 1px solid #c7c7c7;
+  display: inline-block;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  color: #565656;
+}
+
+.TaskItem:hover {
+  border-color: #49a9ee;
+}
+
+.TaskItem-icon {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 20px;
+}
+
+.TaskItem-button {
+  padding-top: 20px;
+}
