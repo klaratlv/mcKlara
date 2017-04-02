@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 module.exports = function sendAction (station, orientation, mission, param1, param2, param3) {
-  axios.get('http://localhost:3001/send', {
+  return axios.get('http://localhost:3001/send', {
     params: {
       station,
       orientation,

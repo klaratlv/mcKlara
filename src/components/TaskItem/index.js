@@ -6,25 +6,39 @@ export default class TaskItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalVisible: false
+      modalVisible: false,
+      args: []
     }
   }
   showModal () {
     this.setState({modalVisible: true})
   }
-  hideModal (state) {
-    console.log(this.props.children)
+  cancel(){
     this.setState({modalVisible: false})
+  }
+  ok (state) {
+    console.log(this.state)
+    this.setState({modalVisible: false})
+    this.props.ok(this.state.args)
+  }
+  valueChanged (e) {
+    let args = this.state.args;
+    args[e.target.name] = e.target.value
+    this.setState({ args })
   }
   buildForm (args) {
     return (
-      args.map((arg, index) => (
-        <div key={index}>
-          <div>{arg}</div>
-          <input type="text" name={index} />
-        </div>
-        ))
-      )
+      <form>
+       {
+        args.map((arg, index) => (
+          <div key={index}>
+            <div>{arg}</div>
+            <input type="text" name={index} onChange={(e) => this.valueChanged(e)} />
+          </div>
+          ))
+       }
+      </form>
+    )
   }
   render () {
     return (
@@ -36,8 +50,8 @@ export default class TaskItem extends React.Component {
         <Modal 
           title={this.props.name} 
           visible={this.state.modalVisible} 
-          onOk={(e) => this.hideModal(e)}
-          onCancel={(e) => this.hideModal(e)}
+          onOk={(e) => this.ok(e)}
+          onCancel={(e) => this.cancel(e)}
           okText="OK"
           cancelText="Cancel"
           >
