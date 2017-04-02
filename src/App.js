@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import TaskItem from './components/TaskItem'
 import './App.css';
 import messenger from './messanger';
@@ -16,10 +15,28 @@ class App extends Component {
           form: ["Duration", "Rhythm"]
         },
         {
-          name: 'Delivery'
+          name: 'Delivery',
+          icon: 'trucking.png'
         },
         {
-          name: 'Fika'
+          name: 'Fika',
+          icon: 'tea-cup.png'
+        },
+        {
+          name: 'Basketball',
+          icon: 'basketball.png'
+        },
+        {
+          name: 'Audio',
+          icon: 'music-player.png'
+        },
+        {
+          name: 'LED',
+          icon: 'display.png'
+        },
+        {
+          name: 'Interview interrupt',
+          icon: 'interview.png'
         }
       ]
     }
@@ -34,7 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src="klara.png" className="App-logo" alt="logo" />
           <h2>Welcome to mcKlara!</h2>
           <h3>The ultimate management console to Klara</h3>
         </div>
@@ -44,7 +61,6 @@ class App extends Component {
               {task.form}
             </TaskItem>
           ))}
-        <button onClick={() => messenger(98,0,7,9,3)}>Click</button>
         </div>
       </div>
     );
