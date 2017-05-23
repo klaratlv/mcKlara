@@ -10,9 +10,7 @@ app.use(function(req, res, next) {
   next();
 })
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(express.static('build'))
 
 app.get('/send', (req, res) => {
   const params = req.query
