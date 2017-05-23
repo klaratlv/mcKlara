@@ -1,7 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 const app = express()
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 const blynkToken = '70bfe532b9a84f89a889e0c7dfad386f'
 
 app.use(function(req, res, next) {
@@ -32,6 +32,6 @@ app.get('/send', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(PORT || 3001, () => {
-  console.log('Example app listening on port 3001!')
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
 })
