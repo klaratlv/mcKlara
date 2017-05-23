@@ -26,6 +26,12 @@ export default class TaskItem extends React.Component {
     args[e.target.name] = e.target.value
     this.setState({ args })
   }
+  onMouseEnter (e) {
+    this.setState({hovering: true})
+  }
+  onMouseLeave (e) {
+    this.setState({hovering: false})
+  }
   buildForm (args) {
     return (
       <form>
@@ -42,10 +48,10 @@ export default class TaskItem extends React.Component {
   }
   render () {
     return (
-      <div className="TaskItem">
+      <div className="TaskItem" onMouseLeave={(e) => this.onMouseLeave(e)} onMouseEnter={(e) => this.onMouseEnter(e)}>
         <div className="TaskItem-icon"><img src={this.props.icon} className="TaskItem-icon" /></div>
         <div className="TaskItem-button">
-          <Button type="primary" onClick={() => this.showModal()}>{this.props.name}</Button>
+          <Button type={this.state.hovering ? 'primary' : 'default'} onClick={() => this.showModal()}>{this.props.name}</Button>
         </div>
         <Modal 
           title={this.props.name} 
