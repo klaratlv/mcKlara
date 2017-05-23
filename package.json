@@ -16,7 +16,7 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "react-scripts": "^1.0.5"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"nodemon ./src/server/index.js\"",
