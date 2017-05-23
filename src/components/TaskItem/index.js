@@ -18,8 +18,14 @@ export default class TaskItem extends React.Component {
   }
   ok (state) {
     console.log(this.state)
-    this.setState({modalVisible: false})
+    this.setState({loading: true})
     this.props.ok(this.state.args)
+      .then(() => {
+        this.setState({modalVisible: false})
+      })
+      .then(() => {
+        this.setState({loading: false})
+      })
   }
   valueChanged (e) {
     let args = this.state.args;

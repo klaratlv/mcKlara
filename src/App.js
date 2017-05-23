@@ -53,7 +53,8 @@ class App extends Component {
     }
   }
   api(task, args) {
-    sendAction(98, 0, task.mission, ...args)
+    const station = 0
+    return sendAction(station, 0, task.mission, ...args)
       .then(res => {
         console.log(res)
       })
