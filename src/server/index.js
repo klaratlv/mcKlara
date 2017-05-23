@@ -5,7 +5,9 @@ const app = express()
 const PORT = process.env.PORT || 3001
 const blynkToken = '70bfe532b9a84f89a889e0c7dfad386f'
 
-dns.setServers(['8.8.8.8', '8.8.4.4'])
+// dns.setServers(['8.8.8.8', '8.8.4.4'])
+let blynkIp;
+dns.resolve('blynk-cloud.com', (err, res) => {blynkIp=res[0]})
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -18,7 +20,7 @@ app.use(express.static('build'))
 app.get('/send', (req, res) => {
   const params = req.query
   
-  axios.get(`http://blynk-cloud.com/${blynkToken}/update/V31`, {
+  axios.get(`http://${blynkIp}/${blynkToken}/update/V31`, {
     params: {
       value: `${params.station},${params.orientation},${params.mission},${params.param1},${params.param2},${params.param3}`
     }
