@@ -22,12 +22,13 @@ app.get('/send', (req, res) => {
   })
   .then(function (response) {
     console.log(response);
+    res.json(response)
   })
   .catch(function (error) {
     console.log(error);
+    res.status(500).send(error)
   })
 
-  res.send('Hello World!')
 })
 
 app.listen(PORT, () => {
