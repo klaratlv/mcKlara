@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TaskItem from './components/TaskItem'
 import './App.css';
-import messenger from './messanger';
+import { sendAction } from './messanger';
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class App extends Component {
     }
   }
   api(task, args) {
-    messenger(98, 0, task.mission, ...args)
+    sendAction(98, 0, task.mission, ...args)
       .then(res => {
         console.log(res)
       })
