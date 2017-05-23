@@ -16,27 +16,38 @@ class App extends Component {
         },
         {
           name: 'Delivery',
-          icon: 'trucking.png'
+          icon: 'trucking.png',
+          mission: 7,
+          form: ["Station"]
         },
         {
           name: 'Fika',
-          icon: 'tea-cup.png'
+          icon: 'tea-cup.png',
+          mission: 8,
+          form: ["Duration", "Rhythm"]
         },
         {
           name: 'Basketball',
-          icon: 'basketball.png'
+          icon: 'basketball.png',
+          mission: 1,
+          form: ["GameDuration"]
         },
         {
           name: 'Audio',
-          icon: 'music-player.png'
+          icon: 'music-player.png',
+          mission: 3,
+          form: ["TrackNumber", "Duration"]
         },
         {
           name: 'LED',
-          icon: 'display.png'
+          icon: 'display.png',
+          mission: 5,
+          form: ["MessageId", "Duration", "ColorChangeInterval"]
         },
         {
           name: 'Interview interrupt',
-          icon: 'interview.png'
+          icon: 'interview.png',
+          mission: 9
         }
       ]
     }
