@@ -7,14 +7,10 @@ const blynkToken = '70bfe532b9a84f89a889e0c7dfad386f'
 
 let blynkIp;
 
+dns.setServers(['8.8.8.8', '8.8.4.4'])
 dns.resolve('blynk-cloud.com', (err, res) => {
-  console.log("without google", res)
-  
-  dns.setServers(['8.8.8.8', '8.8.4.4'])
-  dns.resolve('blynk-cloud.com', (err, res) => {
-    console.log("with google", res)
-    blynkIp=res[0]
-  })
+  console.log("with google", res)
+  blynkIp=res[0]
 })
 
 
