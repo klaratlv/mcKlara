@@ -5,13 +5,13 @@ const app = express()
 const PORT = process.env.PORT || 3001
 const blynkToken = '70bfe532b9a84f89a889e0c7dfad386f'
 
-let blynkIp;
+let blynkIp = '188.166.206.43';
 
-dns.setServers(['8.8.8.8', '8.8.4.4'])
-dns.resolve('blynk-cloud.com', (err, res) => {
-  console.log("with google", res)
-  blynkIp=res[0]
-})
+// dns.setServers(['8.8.8.8', '8.8.4.4'])
+// dns.resolve('blynk-cloud.com', (err, res) => {
+//   console.log("with google", res)
+//   blynkIp=res[0]
+// })
 
 
 app.use(function(req, res, next) {
