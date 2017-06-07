@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "node ./src/server/index.js",
-    "dev": "concurrently \"react-scripts start\" \"nodemon ./src/server/index.js\"",
+    "dev": "concurrently \"REACT_APP_DEV=1 react-scripts start\" \"nodemon ./src/server/index.js\"",
     "build": "./node_modules/.bin/react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
