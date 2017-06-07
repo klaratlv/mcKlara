@@ -35,7 +35,7 @@ app.get('/send', (req, res) => {
   })
   .catch(function (error) {
     console.log(error);
-    res.status(500).send(error)
+    res.status(500).send({msg: error.message})
   })
 
 })
