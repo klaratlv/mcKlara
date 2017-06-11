@@ -12,7 +12,7 @@ class App extends Component {
           name: 'Dance',
           icon: 'ballet.png',
           mission: 4,
-          form: ["Duration", "Rhythm"]
+          form: ["Station", "Duration", "Rhythm"]
         },
         {
           name: 'Delivery',
@@ -24,25 +24,25 @@ class App extends Component {
           name: 'Fika',
           icon: 'tea-cup.png',
           mission: 8,
-          form: ["Duration", "Rhythm"]
+          form: ["Station", "Duration", "Rhythm"]
         },
         {
           name: 'Basketball',
           icon: 'basketball.png',
           mission: 1,
-          form: ["GameDuration"]
+          form: ["Station", "GameDuration"]
         },
         {
           name: 'Audio',
           icon: 'music-player.png',
           mission: 3,
-          form: ["TrackNumber", "Duration"]
+          form: ["Station", "TrackNumber", "Duration"]
         },
         {
           name: 'LED',
           icon: 'display.png',
           mission: 5,
-          form: ["MessageId", "Duration", "ColorChangeInterval"]
+          form: ["Station", "MessageId", "Duration", "ColorChangeInterval"]
         },
         {
           name: 'Interview interrupt',
@@ -53,8 +53,7 @@ class App extends Component {
     }
   }
   api(task, args) {
-    const station = 0
-    return sendAction(station, 0, task.mission, ...args)
+    return sendAction(0, task.mission, ...args)
       .then(res => {
         console.log(res)
       })

@@ -13,7 +13,7 @@ export default class TaskItem extends React.Component {
   showModal () {
     this.setState({modalVisible: true})
   }
-  cancel(){
+  cancel () {
     this.setState({modalVisible: false})
   }
   ok (state) {
