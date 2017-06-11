@@ -1,2 +1,0 @@
-# mcKlara
-Klara management console
